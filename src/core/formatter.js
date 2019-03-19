@@ -1,12 +1,11 @@
-import ScopeNode from "./scopeTree";
-
+var ScopeNode = require('./scopeTree');
 /**
  * This is the core formatter. It contains most of the logic behind the formatting,
  * and it is written in such a way that it is easily extendable to other programming
  * languages. To create a formatter for a new programming language, extend this class
  * and follow the JavaFormatter as an example.
  */
-export default class AFormatter {
+class AFormatter {
 
   /**
    * Create a new AFormatter (abstract formatter).
@@ -571,3 +570,5 @@ export default class AFormatter {
     return [startArray, selectionArray, endArray];
   }
 }
+
+module.exports = AFormatter;

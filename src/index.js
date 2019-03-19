@@ -1,5 +1,7 @@
-import JavaFormatter from "./formatters/javaFormatter"
 
+
+
+let ArduinoFormatter = require("./formatters/arduinoFormatter");
 /**
  * The entry point of the module. Here formatters for various languages can be created.
  * As of right now, only Java is available.
@@ -17,9 +19,10 @@ const Formatter = {
    * @param formatUnit The token to be used for line indentations. (ex. "  " or "    ")
    * @returns {JavaFormatter} Auto-formatter for java code.
    */
-  createJavaFormatter(formatUnit) {
-    return new JavaFormatter(formatUnit)
+  
+  createArduinoFormatter(formatUnit){
+    return new ArduinoFormatter(formatUnit);
   }
 }
 
-export default Formatter
+module.exports = Formatter

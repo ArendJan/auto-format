@@ -4,7 +4,7 @@
  * start or end is not in the code. A parent node contains all scopes inside
  * it as children nodes.
  */
-export default class ScopeTree {
+class ScopeTree {
 
   /**
    * Creates a new node.
@@ -242,3 +242,4 @@ export default class ScopeTree {
     return node.build(lines, index + 1, scopeEnterFunc, scopeExitFunc)
   }
 }
+module.exports = ScopeTree;

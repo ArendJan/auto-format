@@ -1,5 +1,4 @@
-import Formatter from "../core/formatter"
-
+Formatter = require("./../core/formatter");
 var SCOPE_ENTER_TOKEN = '{'
 var SCOPE_EXIT_TOKEN = '}'
 var EXPRESSION_TERMINATION_TOKEN = ';'
