@@ -1,5 +1,4 @@
-import Formatter from "../core/formatter"
-
+Formatter = require('./../core/formatter');
 var SCOPE_ENTER_TOKEN = '{'
 var SCOPE_EXIT_TOKEN = '}'
 var EXPRESSION_TERMINATION_TOKEN = ';'
@@ -17,7 +16,7 @@ var PROTECTED_NON_METHOD_TOKENS = ['return']
  * ArduinoFormatter is the auto-formatter implementation for Arduino code.
  * @extends {AFormatter}
  */
-export default class ArduinoFormatter extends Formatter {
+class ArduinoFormatter extends Formatter {
   /**
    * Create a new Arduino formatter
    *
@@ -30,7 +29,7 @@ export default class ArduinoFormatter extends Formatter {
     /**
      * @private
      */
-    this.methodSigRegex = new RegExp("(<.*>\\s+)?\\w+(<.*>|\\[.*\\])" +
+    this.methodSigRegex = new RegExp("^(void| int )*(<.*>\\s+)?\\w+(<.*>|\\[.*\\])" +
       "?\\s+\\w+\\s*\\(.*$")
   }
 
@@ -289,3 +288,4 @@ export default class ArduinoFormatter extends Formatter {
     return this.methodSigRegex.test(line)
   }
 }
+module.exports = ArduinoFormatter;
